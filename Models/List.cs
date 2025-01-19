@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace echa_backend_dotnet.Models;
+
+public partial class List
+{
+    public int Id { get; set; }
+
+    public int UserId { get; set; }
+
+    public int FontId { get; set; }
+
+    public int StatusListId { get; set; }
+
+    public string Title { get; set; } = null!;
+
+    public string? Description { get; set; }
+
+    public string? HighlightColor { get; set; }
+
+    public DateTime CreationDate { get; set; }
+
+    public DateTime? UpdateDate { get; set; }
+
+    public virtual Font Font { get; set; } = null!;
+
+    public virtual ICollection<Item> Items { get; set; } = new List<Item>();
+
+    public virtual StatusList StatusList { get; set; } = null!;
+
+    public virtual User User { get; set; } = null!;
+}
