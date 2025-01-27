@@ -21,9 +21,9 @@ public partial class Transaction
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual Contribution Contribution { get; set; } = null!;
+    public virtual Contribution? Contribution { get; set; }
 
-    public virtual PaymentMethod PaymentMethod { get; set; } = null!;
+    public virtual PaymentMethod? PaymentMethod { get; set; }
 
-    public virtual StatusTransaction StatusTransaction { get; set; } = null!;
+    public virtual StatusTransaction? StatusTransaction { get; set; }
 }

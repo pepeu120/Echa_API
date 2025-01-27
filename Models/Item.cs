@@ -27,9 +27,9 @@ public partial class Item
 
     public virtual Category? Category { get; set; }
 
-    public virtual ICollection<Contribution> Contributions { get; set; } = new List<Contribution>();
+    public virtual ICollection<Contribution>? Contributions { get; set; }
 
-    public virtual List List { get; set; } = null!;
+    public virtual List? List { get; set; }
 
-    public virtual StatusItem StatusItem { get; set; } = null!;
+    public virtual StatusItem? StatusItem { get; set; }
 }

@@ -15,5 +15,5 @@ public partial class StatusTransaction
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+    public virtual ICollection<Transaction>? Transactions { get; set; }
 }

@@ -15,5 +15,5 @@ public partial class StatusList
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual ICollection<List> Lists { get; set; } = new List<List>();
+    public virtual ICollection<List>? Lists { get; set; }
 }

@@ -21,7 +21,7 @@ public partial class Notification
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual TypeNotification TypeNotification { get; set; } = null!;
+    public virtual TypeNotification? TypeNotification { get; set; }
 
-    public virtual User User { get; set; } = null!;
+    public virtual User? User { get; set; }
 }

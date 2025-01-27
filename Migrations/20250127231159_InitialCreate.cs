@@ -22,9 +22,9 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -39,8 +39,8 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -55,8 +55,8 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(255)", nullable: false),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -71,9 +71,9 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -88,9 +88,9 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -105,9 +105,9 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -122,9 +122,9 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -139,9 +139,9 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -156,9 +156,9 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -173,9 +173,9 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -196,11 +196,11 @@ namespace echa_backend_dotnet.Migrations
                     pix_key = table.Column<string>(type: "varchar(255)", nullable: false),
                     email = table.Column<string>(type: "varchar(255)", nullable: false),
                     contact_number = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false),
-                    password = table.Column<string>(type: "varchar(60)", maxLength: 60, nullable: true, defaultValueSql: null),
-                    profile_image = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true, defaultValueSql: null),
-                    external_auth_id = table.Column<string>(type: "varchar(255)", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    password = table.Column<string>(type: "varchar(60)", maxLength: 60, nullable: true, defaultValueSql: "'NULL'"),
+                    profile_image = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true, defaultValueSql: "'NULL'"),
+                    external_auth_id = table.Column<string>(type: "varchar(255)", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -228,12 +228,12 @@ namespace echa_backend_dotnet.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     error_level = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     error_message = table.Column<string>(type: "text", nullable: false),
-                    error_code = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true, defaultValueSql: null),
-                    user_id = table.Column<int>(type: "int(11)", nullable: true, defaultValueSql: null),
-                    occurrence_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    stack_trace = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    request_data = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    additional_info = table.Column<string>(type: "text", nullable: true, defaultValueSql: null)
+                    error_code = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true, defaultValueSql: "'NULL'"),
+                    user_id = table.Column<int>(type: "int(11)", nullable: true, defaultValueSql: "'NULL'"),
+                    occurrence_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    stack_trace = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    request_data = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    additional_info = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -257,10 +257,10 @@ namespace echa_backend_dotnet.Migrations
                     font_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "'1'"),
                     status_list_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "'1'"),
                     title = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
-                    highlight_color = table.Column<string>(type: "varchar(7)", maxLength: 7, nullable: true, defaultValueSql: "'#609558'"),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
+                    highlight_color = table.Column<string>(type: "varchar(7)", maxLength: 7, nullable: true, defaultValueSql: "'''#609558'''"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -295,10 +295,10 @@ namespace echa_backend_dotnet.Migrations
                     user_id = table.Column<int>(type: "int(11)", nullable: false),
                     type_notification_id = table.Column<int>(type: "int(11)", nullable: false),
                     message = table.Column<string>(type: "text", nullable: false),
-                    notification_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
+                    notification_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
                     read = table.Column<bool>(type: "tinyint(1)", nullable: true, defaultValueSql: "'0'"),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -327,9 +327,9 @@ namespace echa_backend_dotnet.Migrations
                     user_id = table.Column<int>(type: "int(11)", nullable: false),
                     token = table.Column<string>(type: "varchar(255)", nullable: false),
                     expiration_date = table.Column<DateTime>(type: "datetime", nullable: false),
-                    utilization_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    utilization_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -350,14 +350,14 @@ namespace echa_backend_dotnet.Migrations
                     id = table.Column<int>(type: "int(11)", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     list_id = table.Column<int>(type: "int(11)", nullable: false),
-                    category_id = table.Column<int>(type: "int(11)", nullable: true, defaultValueSql: null),
+                    category_id = table.Column<int>(type: "int(11)", nullable: true, defaultValueSql: "'NULL'"),
                     status_item_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "'1'"),
                     name = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false),
-                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
+                    description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
                     total_value = table.Column<decimal>(type: "decimal(10,2)", precision: 10, nullable: false),
-                    image = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true, defaultValueSql: null),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    image = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true, defaultValueSql: "'NULL'"),
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -393,10 +393,10 @@ namespace echa_backend_dotnet.Migrations
                     value = table.Column<decimal>(type: "decimal(10,2)", precision: 10, nullable: false),
                     contributor_name = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false),
                     contributor_email = table.Column<string>(type: "varchar(255)", nullable: false),
-                    message = table.Column<string>(type: "text", nullable: true, defaultValueSql: null),
+                    message = table.Column<string>(type: "text", nullable: true, defaultValueSql: "'NULL'"),
                     status_contribution_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "'1'"),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {
@@ -425,10 +425,10 @@ namespace echa_backend_dotnet.Migrations
                     contribution_id = table.Column<int>(type: "int(11)", nullable: false),
                     payment_method_id = table.Column<int>(type: "int(11)", nullable: false),
                     status_transaction_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "'1'"),
-                    transaction_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
+                    transaction_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
                     transaction_reference = table.Column<string>(type: "varchar(255)", nullable: false),
-                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "current_timestamp()"),
-                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: null)
+                    creation_date = table.Column<DateTime>(type: "datetime", nullable: false, defaultValueSql: "'current_timestamp()'"),
+                    update_date = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "'NULL'")
                 },
                 constraints: table =>
                 {

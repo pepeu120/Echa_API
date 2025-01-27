@@ -15,5 +15,5 @@ public partial class StatusContribution
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual ICollection<Contribution> Contributions { get; set; } = new List<Contribution>();
+    public virtual ICollection<Contribution>? Contributions { get; set; }
 }

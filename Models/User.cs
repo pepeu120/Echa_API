@@ -31,15 +31,15 @@ public partial class User
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual AuthenticationMethod AuthenticationMethod { get; set; } = null!;
+    public virtual AuthenticationMethod? AuthenticationMethod { get; set; }
 
-    public virtual ICollection<ErrorLog> ErrorLogs { get; set; } = new List<ErrorLog>();
+    public virtual ICollection<ErrorLog>? ErrorLogs { get; set; }
 
-    public virtual ICollection<List> Lists { get; set; } = new List<List>();
+    public virtual ICollection<List>? Lists { get; set; }
 
-    public virtual ICollection<Notification> Notifications { get; set; } = new List<Notification>();
+    public virtual ICollection<Notification>? Notifications { get; set; }
 
-    public virtual ICollection<PasswordRecovery> PasswordRecoveries { get; set; } = new List<PasswordRecovery>();
+    public virtual ICollection<PasswordRecovery>? PasswordRecoveries { get; set; }
 
-    public virtual StatusUser StatusUser { get; set; } = null!;
+    public virtual StatusUser? StatusUser { get; set; }
 }

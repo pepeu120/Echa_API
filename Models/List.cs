@@ -23,11 +23,11 @@ public partial class List
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual Font Font { get; set; } = null!;
+    public virtual Font? Font { get; set; }
 
-    public virtual ICollection<Item> Items { get; set; } = new List<Item>();
+    public virtual ICollection<Item>? Items { get; set; }
 
-    public virtual StatusList StatusList { get; set; } = null!;
+    public virtual StatusList? StatusList { get; set; }
 
-    public virtual User User { get; set; } = null!;
+    public virtual User? User { get; set; }
 }

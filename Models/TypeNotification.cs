@@ -15,5 +15,5 @@ public partial class TypeNotification
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual ICollection<Notification> Notifications { get; set; } = new List<Notification>();
+    public virtual ICollection<Notification>? Notifications { get; set; }
 }
