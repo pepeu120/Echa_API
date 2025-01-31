@@ -11,8 +11,8 @@ using echa_backend_dotnet.Models;
 namespace echa_backend_dotnet.Migrations
 {
     [DbContext(typeof(EchaContext))]
-    [Migration("20250127231159_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250131004233_UpdateModel")]
+    partial class UpdateModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -846,18 +846,16 @@ namespace echa_backend_dotnet.Migrations
                         .HasColumnType("int(11)")
                         .HasColumnName("id");
 
-                    b.Property<int>("AuthenticationMethodId")
+                    b.Property<int?>("AuthenticationMethodId")
                         .HasColumnType("int(11)")
                         .HasColumnName("authentication_method_id");
 
                     b.Property<string>("ContactNumber")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)")
                         .HasColumnName("contact_number");
 
                     b.Property<string>("Cpf")
-                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)")
                         .HasColumnName("cpf");
@@ -893,7 +891,6 @@ namespace echa_backend_dotnet.Migrations
                         .HasDefaultValueSql("'NULL'");
 
                     b.Property<string>("PixKey")
-                        .IsRequired()
                         .HasColumnType("varchar(255)")
                         .HasColumnName("pix_key");
 
@@ -1098,7 +1095,6 @@ namespace echa_backend_dotnet.Migrations
                         .WithMany("Users")
                         .HasForeignKey("AuthenticationMethodId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired()
                         .HasConstraintName("user_ibfk_1");
 
                     b.HasOne("echa_backend_dotnet.Models.StatusUser", "StatusUser")

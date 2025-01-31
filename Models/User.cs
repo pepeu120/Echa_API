@@ -7,19 +7,19 @@ public partial class User
 {
     public int Id { get; set; }
 
-    public int AuthenticationMethodId { get; set; }
+    public int? AuthenticationMethodId { get; set; }
 
     public int StatusUserId { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public string Cpf { get; set; } = null!;
+    public string? Cpf { get; set; } = null!;
 
-    public string PixKey { get; set; } = null!;
+    public string? PixKey { get; set; } = null!;
 
     public string Email { get; set; } = null!;
 
-    public string ContactNumber { get; set; } = null!;
+    public string? ContactNumber { get; set; } = null!;
 
     public string? Password { get; set; }
 
