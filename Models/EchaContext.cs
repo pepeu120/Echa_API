@@ -329,6 +329,9 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(7)
                 .HasDefaultValueSql("'''#609558'''")
                 .HasColumnName("highlight_color");
+            entity.Property(e => e.Image)
+                .HasMaxLength(255)
+                .HasColumnName("image");
             entity.Property(e => e.StatusListId)
                 .HasDefaultValueSql("'1'")
                 .HasColumnType("int(11)")

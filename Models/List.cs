@@ -19,6 +19,8 @@ public partial class List
 
     public string? HighlightColor { get; set; }
 
+    public string? Image { get; set; }
+
     public DateTime CreationDate { get; set; }
 
     public DateTime? UpdateDate { get; set; }
