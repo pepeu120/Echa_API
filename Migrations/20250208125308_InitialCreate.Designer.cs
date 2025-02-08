@@ -11,7 +11,7 @@ using echa_backend_dotnet.Models;
 namespace echa_backend_dotnet.Migrations
 {
     [DbContext(typeof(EchaContext))]
-    [Migration("20250208034312_InitialCreate")]
+    [Migration("20250208125308_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -31,15 +31,15 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -49,9 +49,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -71,9 +71,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -83,9 +83,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -113,9 +113,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<int>("ItemId")
                         .HasColumnType("int(11)")
@@ -125,19 +125,19 @@ namespace echa_backend_dotnet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("message")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<int>("StatusContributionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int(11)")
                         .HasColumnName("status_contribution_id")
-                        .HasDefaultValueSql("'1'");
+                        .HasDefaultValueSql("1");
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<decimal>("Value")
                         .HasPrecision(10)
@@ -167,14 +167,14 @@ namespace echa_backend_dotnet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("additional_info")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("ErrorCode")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)")
                         .HasColumnName("error_code")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("ErrorLevel")
                         .IsRequired()
@@ -189,27 +189,27 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("OccurrenceDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("occurrence_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("RequestData")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("request_data")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("StackTrace")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("stack_trace")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<int?>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int(11)")
                         .HasColumnName("user_id")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -228,9 +228,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -239,9 +239,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -264,29 +264,30 @@ namespace echa_backend_dotnet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int(11)")
                         .HasColumnName("category_id")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Image")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)")
                         .HasColumnName("image")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<Guid>("ListId")
-                        .HasColumnType("UUID)")
+                        .HasMaxLength(36)
+                        .HasColumnType("char(36)")
                         .HasColumnName("list_id");
 
                     b.Property<string>("Name")
@@ -299,7 +300,7 @@ namespace echa_backend_dotnet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int(11)")
                         .HasColumnName("status_item_id")
-                        .HasDefaultValueSql("'1'");
+                        .HasDefaultValueSql("1");
 
                     b.Property<decimal>("TotalValue")
                         .HasPrecision(10)
@@ -308,9 +309,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -328,33 +329,34 @@ namespace echa_backend_dotnet.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("UUID)")
+                        .HasMaxLength(36)
+                        .HasColumnType("char(36)")
                         .HasColumnName("id");
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<int>("FontId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int(11)")
                         .HasColumnName("font_id")
-                        .HasDefaultValueSql("'1'");
+                        .HasDefaultValueSql("1");
 
                     b.Property<string>("HighlightColor")
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(7)
                         .HasColumnType("varchar(7)")
                         .HasColumnName("highlight_color")
-                        .HasDefaultValueSql("'''#609558'''");
+                        .HasDefaultValueSql("'#609558'");
 
                     b.Property<string>("Image")
                         .HasMaxLength(255)
@@ -365,7 +367,7 @@ namespace echa_backend_dotnet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int(11)")
                         .HasColumnName("status_list_id")
-                        .HasDefaultValueSql("'1'");
+                        .HasDefaultValueSql("1");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -375,9 +377,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int(11)")
@@ -404,9 +406,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Message")
                         .IsRequired()
@@ -415,9 +417,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("NotificationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("notification_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<bool?>("Read")
                         .ValueGeneratedOnAdd()
@@ -431,9 +433,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int(11)")
@@ -458,12 +460,12 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("expiration_date");
 
                     b.Property<string>("Token")
@@ -473,9 +475,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int(11)")
@@ -483,9 +485,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UtilizationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("utilization_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -507,15 +509,15 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -525,9 +527,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -548,15 +550,15 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -566,9 +568,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -589,15 +591,15 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -607,9 +609,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -630,15 +632,15 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -648,9 +650,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -671,15 +673,15 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -689,9 +691,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -712,15 +714,15 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -730,9 +732,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -757,9 +759,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<int>("PaymentMethodId")
                         .HasColumnType("int(11)")
@@ -769,13 +771,13 @@ namespace echa_backend_dotnet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int(11)")
                         .HasColumnName("status_transaction_id")
-                        .HasDefaultValueSql("'1'");
+                        .HasDefaultValueSql("1");
 
                     b.Property<DateTime>("TransactionDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("transaction_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("TransactionReference")
                         .IsRequired()
@@ -784,9 +786,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -812,15 +814,15 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Description")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("text")
                         .HasColumnName("description")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -830,9 +832,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
@@ -867,9 +869,9 @@ namespace echa_backend_dotnet.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
-                        .HasDefaultValueSql("'current_timestamp()'");
+                        .HasDefaultValueSql("current_timestamp()");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -880,7 +882,7 @@ namespace echa_backend_dotnet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("varchar(255)")
                         .HasColumnName("external_auth_id")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -893,7 +895,7 @@ namespace echa_backend_dotnet.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("varchar(60)")
                         .HasColumnName("password")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<string>("PixKey")
                         .HasColumnType("varchar(255)")
@@ -904,19 +906,19 @@ namespace echa_backend_dotnet.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)")
                         .HasColumnName("profile_image")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.Property<int>("StatusUserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int(11)")
                         .HasColumnName("status_user_id")
-                        .HasDefaultValueSql("'1'");
+                        .HasDefaultValueSql("1");
 
                     b.Property<DateTime?>("UpdateDate")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime")
+                        .HasColumnType("timestamp")
                         .HasColumnName("update_date")
-                        .HasDefaultValueSql("'NULL'");
+                        .HasDefaultValueSql("NULL");
 
                     b.HasKey("Id")
                         .HasName("PRIMARY");
