@@ -7,7 +7,7 @@ public partial class Item
 {
     public int Id { get; set; }
 
-    public int ListId { get; set; }
+    public Guid ListId { get; set; }
 
     public int? CategoryId { get; set; }
 

@@ -29,7 +29,7 @@ namespace echa_backend_dotnet.Controllers
 
         // GET: api/List/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<List>> GetList(int id)
+        public async Task<ActionResult<List>> GetList(Guid id)
         {
             var list = await _context.Lists.FindAsync(id);
 
@@ -44,7 +44,7 @@ namespace echa_backend_dotnet.Controllers
         // PUT: api/List/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutList(int id, List list)
+        public async Task<IActionResult> PutList(Guid id, List list)
         {
             if (id != list.Id)
             {
@@ -85,7 +85,7 @@ namespace echa_backend_dotnet.Controllers
 
         // DELETE: api/List/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteList(int id)
+        public async Task<IActionResult> DeleteList(Guid id)
         {
             var list = await _context.Lists.FindAsync(id);
             if (list == null)
@@ -99,7 +99,7 @@ namespace echa_backend_dotnet.Controllers
             return NoContent();
         }
 
-        private bool ListExists(int id)
+        private bool ListExists(Guid id)
         {
             return _context.Lists.Any(e => e.Id == id);
         }

@@ -282,8 +282,8 @@ namespace echa_backend_dotnet.Migrations
                         .HasColumnName("image")
                         .HasDefaultValueSql("'NULL'");
 
-                    b.Property<int>("ListId")
-                        .HasColumnType("int(11)")
+                    b.Property<Guid>("ListId")
+                        .HasColumnType("UUID)")
                         .HasColumnName("list_id");
 
                     b.Property<string>("Name")
@@ -323,9 +323,9 @@ namespace echa_backend_dotnet.Migrations
 
             modelBuilder.Entity("echa_backend_dotnet.Models.List", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int(11)")
+                        .HasColumnType("UUID)")
                         .HasColumnName("id");
 
                     b.Property<DateTime>("CreationDate")

@@ -5,7 +5,7 @@ namespace echa_backend_dotnet.Models;
 
 public partial class List
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     public int UserId { get; set; }
 

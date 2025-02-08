@@ -265,7 +265,7 @@ public partial class EchaContext : DbContext
                 .HasDefaultValueSql("'NULL'")
                 .HasColumnName("image");
             entity.Property(e => e.ListId)
-                .HasColumnType("int(11)")
+                .HasColumnType("UUID)")
                 .HasColumnName("list_id");
             entity.Property(e => e.Name)
                 .HasMaxLength(255)
@@ -311,7 +311,7 @@ public partial class EchaContext : DbContext
             entity.HasIndex(e => e.UserId, "idx_list_user_id");
 
             entity.Property(e => e.Id)
-                .HasColumnType("int(11)")
+                .HasColumnType("UUID)")
                 .HasColumnName("id");
             entity.Property(e => e.CreationDate)
                 .HasDefaultValueSql("'current_timestamp()'")

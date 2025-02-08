@@ -11,8 +11,8 @@ using echa_backend_dotnet.Models;
 namespace echa_backend_dotnet.Migrations
 {
     [DbContext(typeof(EchaContext))]
-    [Migration("20250131004233_UpdateModel")]
-    partial class UpdateModel
+    [Migration("20250208034312_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -285,8 +285,8 @@ namespace echa_backend_dotnet.Migrations
                         .HasColumnName("image")
                         .HasDefaultValueSql("'NULL'");
 
-                    b.Property<int>("ListId")
-                        .HasColumnType("int(11)")
+                    b.Property<Guid>("ListId")
+                        .HasColumnType("UUID)")
                         .HasColumnName("list_id");
 
                     b.Property<string>("Name")
@@ -326,9 +326,9 @@ namespace echa_backend_dotnet.Migrations
 
             modelBuilder.Entity("echa_backend_dotnet.Models.List", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int(11)")
+                        .HasColumnType("UUID)")
                         .HasColumnName("id");
 
                     b.Property<DateTime>("CreationDate")
@@ -355,6 +355,11 @@ namespace echa_backend_dotnet.Migrations
                         .HasColumnType("varchar(7)")
                         .HasColumnName("highlight_color")
                         .HasDefaultValueSql("'''#609558'''");
+
+                    b.Property<string>("Image")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)")
+                        .HasColumnName("image");
 
                     b.Property<int>("StatusListId")
                         .ValueGeneratedOnAdd()
