@@ -21,6 +21,8 @@ public partial class List
 
     public string? Image { get; set; }
 
+    public DateTime? EventDate { get; set; }
+
     public DateTime CreationDate { get; set; }
 
     public DateTime? UpdateDate { get; set; }
