@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using echa_backend_dotnet.Models;
@@ -51,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingTransaction = await _context.Transactions
+                .AsNoTracking()
+                .FirstOrDefaultAsync(t => t.Id == id);
+
+            if  (existingTransaction == null)
+            {
+                return NotFound();
+            }
+
+            transaction.CreationDate = existingTransaction.CreationDate;
+
             _context.Entry(transaction).State = EntityState.Modified;
+            _context.Entry(transaction).Property(t => t.CreationDate).IsModified = false;
 
             try
             {

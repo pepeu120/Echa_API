@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using echa_backend_dotnet.Models;
@@ -51,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingPaymentMethod = await _context.PaymentMethods
+                .AsNoTracking()
+                .FirstOrDefaultAsync(pm => pm.Id == id);
+
+            if (existingPaymentMethod == null)
+            {
+                return NotFound();
+            }
+
+            paymentMethod.CreationDate = existingPaymentMethod.CreationDate;
+
             _context.Entry(paymentMethod).State = EntityState.Modified;
+            _context.Entry(paymentMethod).Property(p => p.CreationDate).IsModified = false;
 
             try
             {

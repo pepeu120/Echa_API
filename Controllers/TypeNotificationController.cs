@@ -46,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingTypeNotification = await _context.TypeNotifications
+                .AsNoTracking()
+                .FirstOrDefaultAsync(tn => tn.Id == id);
+
+            if (existingTypeNotification == null)
+            {
+                return NotFound();
+            }
+
+            typeNotification.CreationDate = existingTypeNotification.CreationDate;
+
             _context.Entry(typeNotification).State = EntityState.Modified;
+            _context.Entry(typeNotification).Property(tn => tn.CreationDate).IsModified = false;
 
             try
             {

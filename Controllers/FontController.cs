@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using echa_backend_dotnet.Models;
@@ -51,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingFont = await _context.Fonts
+                .AsNoTracking()
+                .FirstOrDefaultAsync(f => f.Id == id);
+
+            if (existingFont == null)
+            {
+                return NotFound();
+            }
+
+            font.CreationDate = existingFont.CreationDate;
+
             _context.Entry(font).State = EntityState.Modified;
+            _context.Entry(font).Property(f => f.CreationDate).IsModified = false;
 
             try
             {

@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using echa_backend_dotnet.Models;
@@ -51,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingNotification = await _context.Notifications
+                .AsNoTracking()
+                .FirstOrDefaultAsync(n => n.Id == id);
+
+            if (existingNotification == null)
+            {
+                return NotFound();
+            }
+
+            notification.CreationDate = existingNotification.CreationDate;
+
             _context.Entry(notification).State = EntityState.Modified;
+            _context.Entry(notification).Property(n => n.CreationDate).IsModified = false;
 
             try
             {

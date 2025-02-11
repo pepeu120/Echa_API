@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using echa_backend_dotnet.Models;
@@ -51,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingPasswordRecovery = await _context.PasswordRecoveries
+                .AsNoTracking()
+                .FirstOrDefaultAsync(pr => pr.Id == id);
+
+            if (existingPasswordRecovery == null)
+            {
+                return NotFound();
+            }
+
+            passwordRecovery.CreationDate = existingPasswordRecovery.CreationDate;
+
             _context.Entry(passwordRecovery).State = EntityState.Modified;
+            _context.Entry(passwordRecovery).Property(pr => pr.CreationDate).IsModified = false;
 
             try
             {

@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using echa_backend_dotnet.Models;
@@ -51,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingAuthenticationMethod = await _context.AuthenticationMethods
+                .AsNoTracking()
+                .FirstOrDefaultAsync(am => am.Id == id);
+
+            if (existingAuthenticationMethod == null)
+            {
+                return NotFound();
+            }
+
+            authenticationMethod.CreationDate = existingAuthenticationMethod.CreationDate;
+
             _context.Entry(authenticationMethod).State = EntityState.Modified;
+            _context.Entry(authenticationMethod).Property(am => am.CreationDate).IsModified = false;
 
             try
             {

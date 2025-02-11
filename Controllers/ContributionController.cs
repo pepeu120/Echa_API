@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using echa_backend_dotnet.Models;
@@ -51,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingContibuion = await _context.Contributions
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            if (existingContibuion == null)
+            {
+                return NotFound();
+            }
+
+            contribution.CreationDate = existingContibuion.CreationDate;
+
             _context.Entry(contribution).State = EntityState.Modified;
+            _context.Entry(contribution).Property(c => c.CreationDate).IsModified = false;
 
             try
             {

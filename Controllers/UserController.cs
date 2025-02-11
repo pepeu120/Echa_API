@@ -46,7 +46,19 @@ namespace echa_backend_dotnet.Controllers
                 return BadRequest();
             }
 
+            var existingUser = await _context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (existingUser == null)
+            {
+                return NotFound();
+            }
+
+            user.CreationDate = existingUser.CreationDate;
+
             _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(user).Property(u => u.Password).IsModified = false;
 
             try
             {

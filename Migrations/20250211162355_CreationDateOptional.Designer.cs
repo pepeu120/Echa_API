@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using echa_backend_dotnet.Models;
 
@@ -10,9 +11,11 @@ using echa_backend_dotnet.Models;
 namespace echa_backend_dotnet.Migrations
 {
     [DbContext(typeof(EchaContext))]
-    partial class EchaContextModelSnapshot : ModelSnapshot
+    [Migration("20250211162355_CreationDateOptional")]
+    partial class CreationDateOptional
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -507,7 +510,7 @@ namespace echa_backend_dotnet.Migrations
                         .HasColumnType("int(11)")
                         .HasColumnName("id");
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime?>("CreationDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp")
                         .HasColumnName("creation_date")
