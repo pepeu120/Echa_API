@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace echa_backend_dotnet.Models;
+﻿namespace echa_backend_dotnet.Models;
 
 public partial class Contribution
 {
@@ -19,7 +16,7 @@ public partial class Contribution
 
     public int StatusContributionId { get; set; }
 
-    public DateTime CreationDate { get; set; }
+    public DateTime? CreationDate { get; set; }
 
     public DateTime? UpdateDate { get; set; }
 

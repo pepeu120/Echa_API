@@ -80,8 +80,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -103,8 +103,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -144,8 +144,8 @@ public partial class EchaContext : DbContext
                 .HasColumnType("int(11)")
                 .HasColumnName("status_contribution_id");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
             entity.Property(e => e.Value)
@@ -227,8 +227,8 @@ public partial class EchaContext : DbContext
                 .HasColumnName("creation_date");
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -278,8 +278,8 @@ public partial class EchaContext : DbContext
                 .HasPrecision(10)
                 .HasColumnName("total_value");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
 
@@ -340,8 +340,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("title");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
             entity.Property(e => e.UserId)
@@ -394,8 +394,8 @@ public partial class EchaContext : DbContext
                 .HasColumnType("int(11)")
                 .HasColumnName("type_notification_id");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
             entity.Property(e => e.UserId)
@@ -434,8 +434,8 @@ public partial class EchaContext : DbContext
                 .HasColumnName("expiration_date");
             entity.Property(e => e.Token).HasColumnName("token");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
             entity.Property(e => e.UserId)
@@ -474,8 +474,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -503,8 +503,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -532,8 +532,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -561,8 +561,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -590,8 +590,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -619,8 +619,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -662,8 +662,8 @@ public partial class EchaContext : DbContext
                 .HasColumnName("transaction_date");
             entity.Property(e => e.TransactionReference).HasColumnName("transaction_reference");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
 
@@ -705,8 +705,8 @@ public partial class EchaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
         });
@@ -766,8 +766,8 @@ public partial class EchaContext : DbContext
                 .HasColumnType("int(11)")
                 .HasColumnName("status_user_id");
             entity.Property(e => e.UpdateDate)
-                .ValueGeneratedOnAddOrUpdate()
-                .HasDefaultValueSql("NULL")
+                .ValueGeneratedOnUpdate()
+                .HasDefaultValueSql("NULL ON UPDATE CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp")
                 .HasColumnName("update_date");
 

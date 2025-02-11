@@ -1,6 +1,6 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -20,7 +20,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -37,7 +37,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
                     update_date = table.Column<DateTime>(type: "timestamp", nullable: true, defaultValueSql: "NULL")
@@ -53,7 +53,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(255)", nullable: false),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
                     update_date = table.Column<DateTime>(type: "timestamp", nullable: true, defaultValueSql: "NULL")
@@ -69,7 +69,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -86,7 +86,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -103,7 +103,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -120,7 +120,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -137,7 +137,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -154,7 +154,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -171,7 +171,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -188,7 +188,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     authentication_method_id = table.Column<int>(type: "int(11)", nullable: true),
                     status_user_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "1"),
                     name = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false),
@@ -225,7 +225,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     error_level = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     error_message = table.Column<string>(type: "text", nullable: false),
                     error_code = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true, defaultValueSql: "NULL"),
@@ -291,7 +291,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     user_id = table.Column<int>(type: "int(11)", nullable: false),
                     type_notification_id = table.Column<int>(type: "int(11)", nullable: false),
                     message = table.Column<string>(type: "text", nullable: false),
@@ -323,7 +323,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     user_id = table.Column<int>(type: "int(11)", nullable: false),
                     token = table.Column<string>(type: "varchar(255)", nullable: false),
                     expiration_date = table.Column<DateTime>(type: "timestamp", nullable: false),
@@ -348,7 +348,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     list_id = table.Column<Guid>(type: "char(36)", maxLength: 36, nullable: false),
                     category_id = table.Column<int>(type: "int(11)", nullable: true, defaultValueSql: "NULL"),
                     status_item_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "1"),
@@ -388,7 +388,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     item_id = table.Column<int>(type: "int(11)", nullable: false),
                     value = table.Column<decimal>(type: "decimal(10,2)", precision: 10, nullable: false),
                     contributor_name = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false),
@@ -421,7 +421,7 @@ namespace echa_backend_dotnet.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     contribution_id = table.Column<int>(type: "int(11)", nullable: false),
                     payment_method_id = table.Column<int>(type: "int(11)", nullable: false),
                     status_transaction_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "1"),

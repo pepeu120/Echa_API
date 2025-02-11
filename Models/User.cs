@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace echa_backend_dotnet.Models;
+﻿namespace echa_backend_dotnet.Models;
 
 public partial class User
 {
@@ -27,7 +24,7 @@ public partial class User
 
     public string? ExternalAuthId { get; set; }
 
-    public DateTime CreationDate { get; set; }
+    public DateTime? CreationDate { get; set; }
 
     public DateTime? UpdateDate { get; set; }
 

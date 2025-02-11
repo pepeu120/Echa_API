@@ -39,7 +39,7 @@ var connectionString =
         + "'DefaultConnection' not found.");
 
 builder.Services.AddDbContext<EchaContext>(options =>
-    options.UseMySQL(connectionString));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddScoped<TokenService>();
 

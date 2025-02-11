@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace echa_backend_dotnet.Models;
+﻿namespace echa_backend_dotnet.Models;
 
 public partial class ErrorLog
 {

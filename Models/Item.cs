@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace echa_backend_dotnet.Models;
+﻿namespace echa_backend_dotnet.Models;
 
 public partial class Item
 {
@@ -21,7 +18,7 @@ public partial class Item
 
     public string? Image { get; set; }
 
-    public DateTime CreationDate { get; set; }
+    public DateTime? CreationDate { get; set; }
 
     public DateTime? UpdateDate { get; set; }
 
