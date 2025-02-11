@@ -261,8 +261,8 @@ public partial class EchaContext : DbContext
                 .HasColumnType("text")
                 .HasColumnName("description");
             entity.Property(e => e.Image)
-                .HasMaxLength(255)
                 .HasDefaultValueSql("NULL")
+                .HasColumnType("text")
                 .HasColumnName("image");
             entity.Property(e => e.ListId)
                 .HasMaxLength(36)
@@ -330,7 +330,8 @@ public partial class EchaContext : DbContext
                 .HasDefaultValueSql("'#609558'")
                 .HasColumnName("highlight_color");
             entity.Property(e => e.Image)
-                .HasMaxLength(255)
+                .HasDefaultValueSql("NULL")
+                .HasColumnType("text")
                 .HasColumnName("image");
             entity.Property(e => e.StatusListId)
                 .HasDefaultValueSql("1")
@@ -758,8 +759,8 @@ public partial class EchaContext : DbContext
                 .HasColumnName("password");
             entity.Property(e => e.PixKey).HasColumnName("pix_key");
             entity.Property(e => e.ProfileImage)
-                .HasMaxLength(255)
                 .HasDefaultValueSql("NULL")
+                .HasColumnType("text")
                 .HasColumnName("profile_image");
             entity.Property(e => e.StatusUserId)
                 .HasDefaultValueSql("1")
