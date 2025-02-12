@@ -13,14 +13,14 @@ namespace echa_backend_dotnet.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterDatabase()
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "authentication_method",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -30,14 +30,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "category",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
                     update_date = table.Column<DateTime>(type: "timestamp", nullable: true, defaultValueSql: "NULL")
@@ -46,14 +46,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "font",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(255)", nullable: false),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
                     update_date = table.Column<DateTime>(type: "timestamp", nullable: true, defaultValueSql: "NULL")
@@ -62,14 +62,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "payment_method",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -79,14 +79,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "status_contribution",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -96,14 +96,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "status_item",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -113,14 +113,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "status_list",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -130,14 +130,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "status_transaction",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -147,14 +147,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "status_user",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -164,14 +164,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "type_notification",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     description = table.Column<string>(type: "text", nullable: true, defaultValueSql: "NULL"),
                     creation_date = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "current_timestamp()"),
@@ -181,14 +181,14 @@ namespace echa_backend_dotnet.Migrations
                 {
                     table.PrimaryKey("PRIMARY", x => x.id);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "user",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     authentication_method_id = table.Column<int>(type: "int(11)", nullable: true),
                     status_user_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "1"),
                     name = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false),
@@ -218,14 +218,14 @@ namespace echa_backend_dotnet.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "error_log",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     error_level = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     error_message = table.Column<string>(type: "text", nullable: false),
                     error_code = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true, defaultValueSql: "NULL"),
@@ -245,7 +245,7 @@ namespace echa_backend_dotnet.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "list",
@@ -284,14 +284,14 @@ namespace echa_backend_dotnet.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "notification",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     user_id = table.Column<int>(type: "int(11)", nullable: false),
                     type_notification_id = table.Column<int>(type: "int(11)", nullable: false),
                     message = table.Column<string>(type: "text", nullable: false),
@@ -316,14 +316,14 @@ namespace echa_backend_dotnet.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "password_recovery",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     user_id = table.Column<int>(type: "int(11)", nullable: false),
                     token = table.Column<string>(type: "varchar(255)", nullable: false),
                     expiration_date = table.Column<DateTime>(type: "timestamp", nullable: false),
@@ -341,14 +341,14 @@ namespace echa_backend_dotnet.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "item",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     list_id = table.Column<Guid>(type: "char(36)", maxLength: 36, nullable: false),
                     category_id = table.Column<int>(type: "int(11)", nullable: true, defaultValueSql: "NULL"),
                     status_item_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "1"),
@@ -381,14 +381,14 @@ namespace echa_backend_dotnet.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "contribution",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     item_id = table.Column<int>(type: "int(11)", nullable: false),
                     value = table.Column<decimal>(type: "decimal(10,2)", precision: 10, nullable: false),
                     contributor_name = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false),
@@ -414,14 +414,14 @@ namespace echa_backend_dotnet.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "transaction",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int(11)", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     contribution_id = table.Column<int>(type: "int(11)", nullable: false),
                     payment_method_id = table.Column<int>(type: "int(11)", nullable: false),
                     status_transaction_id = table.Column<int>(type: "int(11)", nullable: false, defaultValueSql: "1"),
@@ -452,7 +452,7 @@ namespace echa_backend_dotnet.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 })
-                .Annotation("MySQL:Charset", "utf8mb4");
+                .Annotation("MySql:Charset", "utf8mb4");
 
             migrationBuilder.CreateIndex(
                 name: "name",
