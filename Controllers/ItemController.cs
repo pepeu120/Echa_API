@@ -19,7 +19,25 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Item>>> GetItems()
         {
-            return await _context.Items.ToListAsync();
+            var items = await _context.Items
+                .Select(i => 
+                    new Item
+                    {
+                        Id = i.Id,
+                        ListId = i.ListId,
+                        CategoryId = i.CategoryId,
+                        StatusItemId = i.StatusItemId,
+                        Name = i.Name,
+                        Description = i.Description,
+                        TotalValue = i.TotalValue,
+                        ValueCollected = i.Contributions.Sum(c => c.Value),
+                        Image = i.Image,
+                        CreationDate = i.CreationDate,
+                        UpdateDate = i.UpdateDate,
+                    })
+                .ToListAsync();            
+
+            return items;
         }
 
         // GET: api/Item/5
@@ -37,6 +55,8 @@ namespace echa_backend_dotnet.Controllers
             {
                 return NotFound();
             }
+
+            item.ValueCollected = item.Contributions?.Sum(c => c.Value) ?? 0;
 
             return item;
         }

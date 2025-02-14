@@ -1,4 +1,6 @@
-﻿namespace echa_backend_dotnet.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace echa_backend_dotnet.Models;
 
 public partial class Item
 {
@@ -15,6 +17,9 @@ public partial class Item
     public string? Description { get; set; }
 
     public decimal TotalValue { get; set; }
+
+    [NotMapped]
+    public decimal ValueCollected { get; set; }
 
     public string? Image { get; set; }
 
