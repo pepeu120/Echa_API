@@ -16,6 +16,10 @@ public partial class Contribution
 
     public int StatusContributionId { get; set; }
 
+    public string Icon { get; set; } = null!;
+
+    public bool IsVisible { get; set; }
+
     public DateTime? CreationDate { get; set; }
 
     public DateTime? UpdateDate { get; set; }

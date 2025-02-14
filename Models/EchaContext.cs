@@ -139,6 +139,12 @@ public partial class EchaContext : DbContext
                 .HasDefaultValueSql("NULL")
                 .HasColumnType("text")
                 .HasColumnName("message");
+            entity.Property(e => e.IsVisible)
+                .HasDefaultValueSql("'1'")
+                .HasColumnName("is_visible");
+            entity.Property(e => e.Icon)
+                .HasMaxLength(30)
+                .HasColumnName("icon");
             entity.Property(e => e.StatusContributionId)
                 .HasDefaultValueSql("1")
                 .HasColumnType("int(11)")
