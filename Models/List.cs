@@ -23,6 +23,9 @@ public partial class List
     [NotMapped]
     public decimal TotalValue { get; set; }
 
+    [NotMapped]
+    public decimal ValueCollected { get; set; }
+
     public DateTime? EventDate { get; set; }
 
     public DateTime? CreationDate { get; set; }

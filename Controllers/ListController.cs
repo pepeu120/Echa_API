@@ -20,13 +20,24 @@ namespace echa_backend_dotnet.Controllers
         public async Task<ActionResult<IEnumerable<List>>> GetLists()
         {
             var lists = await _context.Lists
-                .Include(l => l.Items)
+                .Select(l =>
+                    new List
+                    {
+                        Id = l.Id,
+                        UserId = l.UserId,
+                        FontId = l.FontId,                        
+                        StatusListId = l.StatusListId,
+                        Title = l.Title,
+                        Description = l.Description,
+                        HighlightColor = l.HighlightColor,
+                        Image = l.Image,
+                        TotalValue = l.Items.Sum(i => i.TotalValue),
+                        ValueCollected = l.Items.SelectMany(i => i.Contributions).Sum(c => c.Value),
+                        EventDate = l.EventDate,
+                        CreationDate = l.CreationDate,
+                        UpdateDate = l.UpdateDate,
+                    })
                 .ToListAsync();
-
-            lists.ForEach(list =>
-            {
-                list.TotalValue = list.Items?.Sum(item => item.TotalValue) ?? 0;
-            });
 
             return lists;
         }
@@ -38,6 +49,7 @@ namespace echa_backend_dotnet.Controllers
             var list = await _context.Lists
                 .Include(l => l.Font)
                 .Include(l => l.Items)
+                    .ThenInclude(i => i.Contributions)
                 .Include(l => l.StatusList)
                 .Include(l => l.User)
                 .SingleOrDefaultAsync(l => l.Id == id);
@@ -47,7 +59,8 @@ namespace echa_backend_dotnet.Controllers
                 return NotFound();
             }
 
-            list.TotalValue = list.Items?.Sum(item => item.TotalValue) ?? 0;
+            list.TotalValue = list.Items?.Sum(i => i.TotalValue) ?? 0;
+            list.ValueCollected = list.Items?.SelectMany(i => i.Contributions).Sum(c => c.Value) ?? 0;
 
             return list;
         }

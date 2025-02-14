@@ -57,7 +57,7 @@ namespace echa_backend_dotnet.Controllers
             }
 
             item.ValueCollected = item.Contributions?.Sum(c => c.Value) ?? 0;
-
+        
             return item;
         }
 
