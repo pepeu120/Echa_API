@@ -26,7 +26,12 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<List>> GetList(Guid id)
         {
-            var list = await _context.Lists.FindAsync(id);
+            var list = await _context.Lists
+                .Include(l => l.Font)
+                .Include(l => l.Items)
+                .Include(l => l.StatusList)
+                .Include(l => l.User)
+                .SingleOrDefaultAsync(l => l.Id == id);
 
             if (list == null)
             {

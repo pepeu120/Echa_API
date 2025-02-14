@@ -26,7 +26,10 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Notification>> GetNotification(int id)
         {
-            var notification = await _context.Notifications.FindAsync(id);
+            var notification = await _context.Notifications
+                .Include(n => n.TypeNotification)
+                .Include(n => n.User)                
+                .SingleOrDefaultAsync(n => n.Id == id);
 
             if (notification == null)
             {

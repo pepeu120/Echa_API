@@ -26,7 +26,9 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<PaymentMethod>> GetPaymentMethod(int id)
         {
-            var paymentMethod = await _context.PaymentMethods.FindAsync(id);
+            var paymentMethod = await _context.PaymentMethods
+                .Include(pm => pm.Transactions)
+                .SingleOrDefaultAsync(pm => pm.Id == id);
 
             if (paymentMethod == null)
             {

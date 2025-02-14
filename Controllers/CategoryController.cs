@@ -26,7 +26,9 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
+            var category = await _context.Categories
+            .Include(c => c.Items)
+            .SingleOrDefaultAsync(c => c.Id == id);
 
             if (category == null)
             {

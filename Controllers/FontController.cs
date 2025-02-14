@@ -26,7 +26,9 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Font>> GetFont(int id)
         {
-            var font = await _context.Fonts.FindAsync(id);
+            var font = await _context.Fonts
+            .Include(f => f.Lists)
+            .SingleOrDefaultAsync(f => f.Id == id);
 
             if (font == null)
             {

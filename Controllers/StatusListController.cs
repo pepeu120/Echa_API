@@ -26,7 +26,9 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<StatusList>> GetStatusList(int id)
         {
-            var statusList = await _context.StatusLists.FindAsync(id);
+            var statusList = await _context.StatusLists
+                .Include(sl => sl.Lists)
+                .SingleOrDefaultAsync(sl => sl.Id == id);
 
             if (statusList == null)
             {

@@ -26,7 +26,11 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Transaction>> GetTransaction(int id)
         {
-            var transaction = await _context.Transactions.FindAsync(id);
+            var transaction = await _context.Transactions
+                .Include(t => t.Contribution)
+                .Include(t => t.PaymentMethod)
+                .Include(t => t.StatusTransaction)
+                .SingleOrDefaultAsync(t => t.Id == id);
 
             if (transaction == null)
             {

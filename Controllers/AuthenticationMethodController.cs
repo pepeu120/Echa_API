@@ -26,7 +26,9 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<AuthenticationMethod>> GetAuthenticationMethod(int id)
         {
-            var authenticationMethod = await _context.AuthenticationMethods.FindAsync(id);
+            var authenticationMethod = await _context.AuthenticationMethods
+                .Include(am => am.Users)
+                .SingleOrDefaultAsync(am => am.Id == id);
 
             if (authenticationMethod == null)
             {

@@ -26,7 +26,9 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<PasswordRecovery>> GetPasswordRecovery(int id)
         {
-            var passwordRecovery = await _context.PasswordRecoveries.FindAsync(id);
+            var passwordRecovery = await _context.PasswordRecoveries
+                .Include(pr => pr.User)
+                .SingleOrDefaultAsync(pr => pr.Id == id);
 
             if (passwordRecovery == null)
             {

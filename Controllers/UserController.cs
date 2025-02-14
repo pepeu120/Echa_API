@@ -26,7 +26,14 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users
+                .Include(u => u.AuthenticationMethod)
+                .Include(u => u.ErrorLogs)
+                .Include(u => u.Lists)
+                .Include(u => u.Notifications)
+                .Include(u => u.PasswordRecoveries)
+                .Include(u => u.StatusUser)
+                .SingleOrDefaultAsync(u => u.Id == id);
 
             if (user == null)
             {
