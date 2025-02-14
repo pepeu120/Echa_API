@@ -118,6 +118,35 @@ namespace echa_backend_dotnet.Controllers
 
             return CreatedAtAction("GetList", new { id = list.Id }, list);
         }
+        
+        // POST: api/List/5/cashout
+        [HttpPost("{id}/cashout")]
+        public async Task<IActionResult> CashOut(Guid id)
+        {
+            var list = await _context.Lists
+                .Include(l => l.User)
+                .SingleOrDefaultAsync(l => l.Id == id);
+
+            if (list == null)
+            {
+                return NotFound("Lista não encontrada.");
+            }
+
+            var user = list.User;
+
+            if (string.IsNullOrWhiteSpace(user!.PixKey))
+            {
+                return BadRequest("Você precisa cadastrar uma PixKey antes de solicitar o saque.");
+            }
+
+            // Altera o StatusListId para 2
+            list.StatusListId = 2;
+
+            _context.Entry(list).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return Ok("Saque solicitado com sucesso.");
+        }
 
         // DELETE: api/List/5
         [HttpDelete("{id}")]
