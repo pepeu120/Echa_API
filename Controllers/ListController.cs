@@ -19,7 +19,16 @@ namespace echa_backend_dotnet.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<List>>> GetLists()
         {
-            return await _context.Lists.ToListAsync();
+            var lists = await _context.Lists
+                .Include(l => l.Items)
+                .ToListAsync();
+
+            lists.ForEach(list =>
+            {
+                list.TotalValue = list.Items?.Sum(item => item.TotalValue) ?? 0;
+            });
+
+            return lists;
         }
 
         // GET: api/List/5
@@ -37,6 +46,8 @@ namespace echa_backend_dotnet.Controllers
             {
                 return NotFound();
             }
+
+            list.TotalValue = list.Items?.Sum(item => item.TotalValue) ?? 0;
 
             return list;
         }

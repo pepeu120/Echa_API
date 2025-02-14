@@ -1,4 +1,6 @@
-﻿namespace echa_backend_dotnet.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace echa_backend_dotnet.Models;
 
 public partial class List
 {
@@ -17,6 +19,9 @@ public partial class List
     public string? HighlightColor { get; set; }
 
     public string? Image { get; set; }
+
+    [NotMapped]
+    public decimal TotalValue { get; set; }
 
     public DateTime? EventDate { get; set; }
 
