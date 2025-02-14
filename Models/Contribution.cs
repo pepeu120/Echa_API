@@ -24,7 +24,7 @@ public partial class Contribution
 
     public DateTime? UpdateDate { get; set; }
 
-    public virtual Item Item { get; set; } = null!;
+    public virtual Item? Item { get; set; } = null!;
 
     public virtual StatusContribution? StatusContribution { get; set; }
 
