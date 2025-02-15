@@ -18,6 +18,8 @@ public class TokenService
 
     public string GenerateToken(User user)
     {
+        user.Password = null;
+        
         var jwtSettings = _configuration.GetSection("Jwt");
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using echa_backend_dotnet.Models;
+using echa_backend_dotnet.Services;
 
 namespace echa_backend_dotnet.Controllers
 {
@@ -9,10 +10,14 @@ namespace echa_backend_dotnet.Controllers
     public class UserController : ControllerBase
     {
         private readonly EchaContext _context;
+        private readonly TokenService _tokenService;
 
-        public UserController(EchaContext context)
+
+        public UserController(EchaContext context, TokenService tokenService)
         {
             _context = context;
+            _tokenService = tokenService;
+
         }
 
         // GET: api/User
@@ -94,7 +99,11 @@ namespace echa_backend_dotnet.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.Id }, user);
+            // Gera o token após criar o usuário
+            var token = _tokenService.GenerateToken(user);
+
+            // Retorna o usuário + token no corpo da resposta
+            return CreatedAtAction("GetUser", new { id = user.Id }, new { user, token });
         }
 
         // DELETE: api/User/5
