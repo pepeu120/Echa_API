@@ -140,10 +140,10 @@ public partial class EchaContext : DbContext
                 .HasColumnType("text")
                 .HasColumnName("message");
             entity.Property(e => e.IsVisible)
-                .HasDefaultValueSql("'1'")
+                .HasDefaultValue(1)
                 .HasColumnName("is_visible");
             entity.Property(e => e.IsRead)
-                .HasDefaultValueSql("'0'")
+                .HasDefaultValue(0)
                 .HasColumnName("is_read");
             entity.Property(e => e.Icon)
                 .HasMaxLength(30)

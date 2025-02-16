@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using echa_backend_dotnet.Models;
 
@@ -10,9 +11,11 @@ using echa_backend_dotnet.Models;
 namespace echa_backend_dotnet.Migrations
 {
     [DbContext(typeof(EchaContext))]
-    partial class EchaContextModelSnapshot : ModelSnapshot
+    [Migration("20250216223816_MessageToContributorsAndIsRead")]
+    partial class MessageToContributorsAndIsRead
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
