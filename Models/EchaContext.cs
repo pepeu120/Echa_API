@@ -342,6 +342,10 @@ public partial class EchaContext : DbContext
                 .HasDefaultValueSql("NULL")
                 .HasColumnType("text")
                 .HasColumnName("image");
+            entity.Property(e => e.MessageToContributors)
+                .HasDefaultValueSql("NULL")
+                .HasColumnType("text")
+                .HasColumnName("message_to_contributors");
             entity.Property(e => e.StatusListId)
                 .HasDefaultValueSql("1")
                 .HasColumnType("int(11)")

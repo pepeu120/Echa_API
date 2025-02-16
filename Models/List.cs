@@ -20,6 +20,8 @@ public partial class List
 
     public string? Image { get; set; }
 
+    public string? MessageToContributors { get; set; }
+
     [NotMapped]
     public decimal TotalValue { get; set; }
 
