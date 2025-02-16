@@ -19,6 +19,7 @@ public class TokenService
     public string GenerateToken(User user)
     {
         user.Password = null;
+        user.ProfileImage = null;
         
         var jwtSettings = _configuration.GetSection("Jwt");
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]));
