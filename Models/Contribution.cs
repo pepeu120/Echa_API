@@ -20,6 +20,8 @@ public partial class Contribution
 
     public bool IsVisible { get; set; }
 
+    public bool IsRead { get; set; }
+
     public DateTime? CreationDate { get; set; }
 
     public DateTime? UpdateDate { get; set; }
