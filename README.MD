@@ -4,7 +4,6 @@
 
 - **ASP.NET Core**
 - **MariaDB** ou **MySQL** (como banco de dados relacional)
-- **Swashbuckle.AspNetCore** (para documentação do Swagger)
 
 ## Configuração e execução
 
