@@ -44,14 +44,3 @@ Exemplo:
    ```bash
    dotnet run
    ```
-
-## Configuração do CORS
-
-Para permitir requisições de origens específicas, edite o arquivo `appsettings.json` ou `appsettings.Development.json` e adicione os domínios permitidos na seção `Cors`:
-
-```json
-{
-  "Cors": {
-    "AllowedOrigins": [ "http://localhost:4200" ]
-  }
-}
